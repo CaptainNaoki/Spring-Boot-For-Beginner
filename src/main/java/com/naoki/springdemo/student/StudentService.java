@@ -7,29 +7,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class StudentService {
-    public List<Student> findSAllStudent(){
-    return List.of(
-            new Student(
-                       34,
-                               "naonao@gmail.com",
-                       LocalDate.now(),
-                       "PAKOU",
-                               "Isidor"
+public interface StudentService {
+    Student save(Student s);
+    List<Student> findSAllStudent();
+    Student findByEmail(String email);
+    Student update(Student s);
+    void delete(String email);
 
-                               ),
-                               new Student(
-                        55,
-                                "kam@gmail.com",
-                        LocalDate.now(),
-                        "ORIO",
-                                       "QAURIOPO"
-
-                                )
-
-
-
-                                );
-
-}
 }
